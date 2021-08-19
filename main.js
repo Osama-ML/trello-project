@@ -1,9 +1,10 @@
-class Label {
+class Task {
 
       constructor(){
             this.task = {
                   id: '',
                   title:'',
+                  description: '',
                   comments:[]
             }
       }
@@ -12,19 +13,31 @@ class Label {
             this.task = {
                   id: Date.now(),
                   title,
+                  description: '',
                   comments : []
             }
-            console.log(this.task)
       }
 
-      editTitleTask(editInfo){
-            this.task = {...this.task, title: editInfo }
-            console.log(this.task)
+      editTitleTask(newTitle = ""){
+            this.task = {...this.task, title: newTitle }
       }
 
-      addComment(comment){
-            this.task = {...this.task, comments: [...this.task.comments,comment]}
-            console.log(this.task)
+      addDescriptionTask(description = ""){
+            this.task = {...this.task, description}
+      }
+
+      addCommentTask(comment = ""){
+            this.task = {...this.task, comments: [ {id: Date.now(), comment}, ...this.task.comments]}
+      }
+
+      editCommentTask(commentId, newComment) {
+            let arrComments = this.task.comments.filter(comment => comment.id === commentId);
+            console.log(arrComments)
+            this.task.comments = [...arrComments, {id: commentId , comment: newComment}];
+      }
+
+      deleteCommentTask(commentId) {
+
       }
 
 }
@@ -41,22 +54,19 @@ class Label {
       
 // }
 
-let task1 = new Label;
-let task2 = new Label;
-
-task1.createTask("Primera tarea");
+let task1 = new Task;
+task1.createTask('Agregar funcionalidad al Front');
+task1.addDescriptionTask('Descripción de la tarea');
+task1.addCommentTask('comentario para borrar');
 setTimeout(() => {
-      task2.createTask("Segunda tarea");
-}, 3000)
+      task1.addCommentTask('Creo que estamos teniendo serias daudas con esta tarea');
+})
+task1.addDescriptionTask('Descripción 2 de la tarea');
 
-setTimeout(() => {
-      task1.editTitleTask('Nuevo titulo')
-}, 4000)
-
-setTimeout(() => {
-      task1.addComment('esto es un comentario')
-}, 5000)
+console.log(task1)
 
 setTimeout(() => {
-      task1.addComment('esto es otro comentario')
-}, 6000)
+      task1.editCommentTask(task1.task.comments[0].id, "Comentario editado")
+})
+
+console.log(task1)
