@@ -11,7 +11,7 @@ class Task {
 
       createTask(title = ""){
             this.task = {
-                  id: Date.now(),
+                  id: idGenerator(),
                   title,
                   description: '',
                   comments : []
@@ -27,17 +27,17 @@ class Task {
       }
 
       addCommentTask(comment = ""){
-            this.task = {...this.task, comments: [ {id: Date.now(), comment}, ...this.task.comments]}
+            this.task = {...this.task, comments: [ {id: idGenerator(), comment}, ...this.task.comments]}
       }
 
       editCommentTask(commentId, newComment) {
-            let arrComments = this.task.comments.filter(comment => comment.id === commentId);
-            console.log(arrComments)
+
+            let arrComments = this.task.comments.filter(comment => comment.id != commentId);
             this.task.comments = [...arrComments, {id: commentId , comment: newComment}];
       }
 
       deleteCommentTask(commentId) {
-
+            this.task.comments = this.task.comments.filter(comment => comment.id != commentId);
       }
 
 }
@@ -54,19 +54,30 @@ class Task {
       
 // }
 
+const idGenerator = () => {
+      return '_' + Math.random().toString(36).substr(2, 9);
+}
+
 let task1 = new Task;
 task1.createTask('Agregar funcionalidad al Front');
 task1.addDescriptionTask('Descripción de la tarea');
 task1.addCommentTask('comentario para borrar');
 setTimeout(() => {
       task1.addCommentTask('Creo que estamos teniendo serias daudas con esta tarea');
-})
-task1.addDescriptionTask('Descripción 2 de la tarea');
-
-console.log(task1)
+},1000);
 
 setTimeout(() => {
-      task1.editCommentTask(task1.task.comments[0].id, "Comentario editado")
-})
+      task1.addCommentTask('Este comentario no se puede borrar uwu');
+},1500);
 
-console.log(task1)
+task1.addDescriptionTask('Descripción 2 de la tarea');
+
+setTimeout(() => {
+      let editComment = task1.task.comments.find(comment => comment.comment == "comentario para borrar" )
+      task1.deleteCommentTask(editComment.id,)
+}, 2000)
+
+setTimeout(() => {
+
+      console.log(task1)
+},5000)
