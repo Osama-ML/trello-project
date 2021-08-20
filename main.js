@@ -1,83 +1,59 @@
 class Task {
 
-      constructor(){
-            this.task = {
-                  id: '',
-                  title:'',
-                  description: '',
-                  comments:[]
-            }
+      constructor() {
+            this.id = '';
+            this.title = '';
+            this.description = '';
+            this.comments = [];
       }
 
-      createTask(title = ""){
-            this.task = {
-                  id: idGenerator(),
-                  title,
-                  description: '',
-                  comments : []
-            }
+      putTitleTask(title = ""){
+            this.title = title;
       }
 
-      editTitleTask(newTitle = ""){
-            this.task = {...this.task, title: newTitle }
-      }
-
-      addDescriptionTask(description = ""){
-            this.task = {...this.task, description}
+      putDescriptionTask(description = ""){
+            this.description = description
       }
 
       addCommentTask(comment = ""){
-            this.task = {...this.task, comments: [ {id: idGenerator(), comment}, ...this.task.comments]}
+            this.comments = [ {id: idGenerator(), comment}, ...this.comments]
       }
 
       editCommentTask(commentId, newComment) {
 
-            let arrComments = this.task.comments.filter(comment => comment.id != commentId);
-            this.task.comments = [...arrComments, {id: commentId , comment: newComment}];
+            let arrComments = this.comments.filter(comment => comment.id !== commentId);
+            this.comments = [...arrComments, {id: commentId , comment: newComment}];
       }
 
       deleteCommentTask(commentId) {
-            this.task.comments = this.task.comments.filter(comment => comment.id != commentId);
+            this.comments = this.comments.filter(comment => comment.id != commentId);
       }
 
 }
 
-// class List {
+class List {
 
-//       constructor() {
-//             this.tasks = [];
-//       }
+      constructor() {
+            this.tasks = [];
+            this.title = ""
+            this.id = idGenerator();
+      }
 
-//       createColumn(){
-//             return this.tasks;
-//       }
+      putTitleColumn(title){
+            this.title = title;
+      }
+
+      addTask(task){
+            this.tasks = [task, ...this.tasks]
+      }
+
+      deleteTask(taskId){
+            this.tasks = this.tasks,filter(task => task.id !== taskId)
+      }
       
-// }
+}
 
 const idGenerator = () => {
       return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-let task1 = new Task;
-task1.createTask('Agregar funcionalidad al Front');
-task1.addDescriptionTask('Descripción de la tarea');
-task1.addCommentTask('comentario para borrar');
-setTimeout(() => {
-      task1.addCommentTask('Creo que estamos teniendo serias daudas con esta tarea');
-},1000);
-
-setTimeout(() => {
-      task1.addCommentTask('Este comentario no se puede borrar uwu');
-},1500);
-
-task1.addDescriptionTask('Descripción 2 de la tarea');
-
-setTimeout(() => {
-      let editComment = task1.task.comments.find(comment => comment.comment == "comentario para borrar" )
-      task1.deleteCommentTask(editComment.id,)
-}, 2000)
-
-setTimeout(() => {
-
-      console.log(task1)
-},5000)
