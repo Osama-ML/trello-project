@@ -1,8 +1,8 @@
 class Task {
 
-      constructor() {
-            this.id = '';
-            this.title = '';
+      constructor(title) {
+            this.id = idGenerator();
+            this.title = title;
             this.description = '';
             this.comments = [];
       }
@@ -33,9 +33,9 @@ class Task {
 
 class List {
 
-      constructor() {
+      constructor(title) {
             this.tasks = [];
-            this.title = ""
+            this.title = title;
             this.id = idGenerator();
       }
 
@@ -48,7 +48,7 @@ class List {
       }
 
       deleteTask(taskId){
-            this.tasks = this.tasks,filter(task => task.id !== taskId)
+            this.tasks = this.tasks.filter(task => task.id !== taskId)
       }
       
 }
