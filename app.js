@@ -32,8 +32,6 @@ column1.tasks.map((task) => {
 let addNewColumn = document.createElement("div");
 addNewColumn.classList = "create-new-column";
 
-console.log(document.getElementsByClassName('card'))
-
 if(document.getElementsByClassName('card')){
       mainCointainer.appendChild(addNewColumn)
 }else{
