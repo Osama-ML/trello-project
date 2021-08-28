@@ -6,19 +6,16 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-div {
-  width: 100vw;
-  height: auto;
+.container{
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 #manipulate{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .card {
@@ -27,4 +24,22 @@ div {
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
   padding: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.create-new-column input{
+  height: 2rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  background-color: gray;
+}
+
+::placeholder{
+  color: white;
 }
