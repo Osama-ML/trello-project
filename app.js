@@ -32,7 +32,13 @@ column1.tasks.map((task) => {
 let addNewColumn = document.createElement("div");
 addNewColumn.classList = "create-new-column";
 
-mainCointainer.after(addNewColumn);
+console.log(document.getElementsByClassName('card'))
+
+if(document.getElementsByClassName('card')){
+      mainCointainer.appendChild(addNewColumn)
+}else{
+      mainCointainer.after(addNewColumn);
+}
 
 let newColumnForm = document.createElement("form");
 addNewColumn.appendChild(newColumnForm);
@@ -42,24 +48,3 @@ newColumnForm.appendChild(newColumnInput);
 
 newColumnInput.setAttribute("id", "add-list");
 document.getElementById("add-list").placeholder = "+ Añada una lista";
-
-
-
-
-let column2 = new List("To do 2");
-let columnHTML2 = document.createElement("div");
-columnHTML2.className = "card";
-columnHTML2.textContent = column2.title;
-mainCointainer.appendChild(columnHTML2);
-
-let column3 = new List("To do 3");
-let columnHTML3 = document.createElement("div");
-columnHTML3.className = "card";
-columnHTML3.textContent = column3.title;
-mainCointainer.appendChild(columnHTML3);
-
-let column4 = new List("To do 4");
-let columnHTML4 = document.createElement("div");
-columnHTML4.className = "card";
-columnHTML4.textContent = column4.title;
-mainCointainer.appendChild(columnHTML4);
