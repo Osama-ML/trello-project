@@ -1,23 +1,19 @@
-let mainCointainer = document.querySelector("#manipulate");
+let columns = document.querySelector('#columns');
 
 let createNewList = () => {
+    let input = document.getElementById("add-new-list");
 
-     let input=  document.getElementById('add-new-list');
-
-     let list = new List(input.value);
-     let listHTML = document.createElement("div");
-     listHTML.setAttribute('id', list.id)
-     listHTML.className = "card";
-     listHTML.textContent = list.title;
-     mainCointainer.appendChild(listHTML);
-     input.value = ''
-     console.log(input.value)
-
-}
+    let list = new Column(input.value);
+    let listHTML = document.createElement("div");
+    listHTML.className = "card";
+    listHTML.setAttribute("id", list.id);
+    listHTML.textContent = list.title;
+    columns.appendChild(listHTML);
+    input.value = "";
+    console.log(input.value);
+};
 
 // Creating a column of tasks
-
-
 
 // Creating tasks
 
@@ -43,26 +39,23 @@ let createNewList = () => {
 let addNewColumn = document.createElement("div");
 addNewColumn.classList = "create-new-column";
 
-if(document.getElementsByClassName('card')){
-      mainCointainer.appendChild(addNewColumn)
-}else{
-      document.getElementsByClassName('create-new-column').removeChild()
-      mainCointainer.after(addNewColumn);
-}
+document.querySelector("#columns").after(addNewColumn);
+
+
 
 let newColumnForm = document.createElement("form");
 newColumnForm.setAttribute("id", "add-new-list-form");
 addNewColumn.appendChild(newColumnForm);
 
 let newColumnInput = document.createElement("input");
+newColumnInput.setAttribute('autocomplete', 'off')
 
 newColumnForm.appendChild(newColumnInput);
 
 newColumnInput.setAttribute("id", "add-new-list");
 document.getElementById("add-new-list").placeholder = "+ Añada una lista";
 
-
-newColumnForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-      createNewList()
-})
+newColumnForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createNewList();
+});

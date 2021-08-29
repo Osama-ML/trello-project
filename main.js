@@ -31,7 +31,7 @@ class Task {
 
 }
 
-class List {
+class Column {
 
       constructor(title) {
             this.tasks = [];
