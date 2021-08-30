@@ -1,4 +1,5 @@
 let columns = document.querySelector('#columns');
+let myStore = new Storage();
 
 let createNewList = () => {
     let input = document.getElementById("add-new-list");
@@ -11,6 +12,9 @@ let createNewList = () => {
     columns.appendChild(listHTML);
     input.value = "";
     console.log(input.value);
+
+    myStore.addListToStorage(list)
+    myStore.seeStorage();
 };
 
 // Creating a column of tasks
