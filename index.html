@@ -6,23 +6,34 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./style.css"/>
       <title>Trello Clases</title>
+      
+      <script src="model/idGenerator.js"></script>
+      <script src="model/Column.js"></script>
+      <script src="model/Task.js"></script>
+      <script src="model/Storage.js"></script>
+      
+      <script src="controller/createNewColumn.js"></script>
+      
+      
 </head>
-<body>
 
+<body>
       <div class="header">
             <h1>Task Manager</h1>
       </div>
-
+      
       <div class="container">
-            <div id="columns"></div>
+            <div id="columns-container"></div>
       </div>
-
+      
       <div class="footer">
             by: 🧢 blueC4P 
       </div>
+      
 </body>
-<script  type="module" src="app.js"></script>
-<script src="./model/Column.js"></script>
-<script src="./model/Task.js"></script>
-<script src="./model/Storage.js"></script>
+
+<script src="app.js"></script>
+
+<script src="view/createNewColumnView.js"></script>
+<script src="view/addColumnButton.js"></script>
 </html>

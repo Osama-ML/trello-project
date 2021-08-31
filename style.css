@@ -7,7 +7,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#columns{
+#columns-container{
   display: flex;
   overflow-x: visible;
   
