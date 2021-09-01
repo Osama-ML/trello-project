@@ -72,3 +72,13 @@ body {
 ::placeholder{
   color: white;
 }
+
+.add-task-and-tasks-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.card input{
+  box-sizing: border-box;
+  width: 100%;
+}
