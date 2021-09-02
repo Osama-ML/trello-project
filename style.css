@@ -69,9 +69,6 @@ body {
   background-color: gray;
 }
 
-::placeholder{
-  color: white;
-}
 
 .add-task-and-tasks-container{
   display: flex;
@@ -80,5 +77,20 @@ body {
 
 .card input{
   box-sizing: border-box;
+  border-radius: 5px;
   width: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  height: 2rem;
+  transition: background-color .5s;
+}
+
+.card input:hover{
+  background-color: gray;
+}
+
+::placeholder{
+  color: white;
 }

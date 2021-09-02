@@ -11,20 +11,25 @@ const createNewColumnView = (id, title) => {
     let addTaskContainer = document.createElement("div")
     let addTaskForm = document.createElement("form")
     let addTaskInput = document.createElement("input")
+    
     addTaskInput.setAttribute('autocomplete', 'off')
-
+    addTaskInput.setAttribute("id", "add-task-input")
+    
+    
     addTaskContainer.appendChild(addTaskForm);
     addTaskForm.appendChild(addTaskInput);
-
-
+    
+    
     let tasksContainer = document.createElement("div")
     tasksContainer.setAttribute("id", "tasks-container")
     addTaskAndTasksContainer.appendChild(addTaskContainer)
     addTaskAndTasksContainer.appendChild(tasksContainer)
-
+    
     document.getElementById(id).appendChild(addTaskAndTasksContainer);
     
-    document.getElementById("#tasks-container").after(addTaskContainer)
+    document.getElementById("tasks-container").after(addTaskContainer)
+    
+    document.getElementById('add-task-input').placeholder = "+ Añada una tarjeta"
 
 };
 
