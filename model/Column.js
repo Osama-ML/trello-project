@@ -1,9 +1,9 @@
 class Column {
 
-      constructor(title) {
-            this.tasks = [];
+      constructor(title, id = idGenerator(), tasks = []) {
+            this.tasks = tasks;
             this.title = title;
-            this.id = idGenerator();
+            this.id = id;
       }
 
       putTitleColumn(title){
@@ -11,7 +11,7 @@ class Column {
       }
 
       addTask(task){
-            this.tasks = [task, ...this.tasks]
+            this.tasks = [...this.tasks, task]
       }
 
       deleteTask(taskId){

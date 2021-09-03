@@ -26,10 +26,29 @@ const createNewColumnView = (id, title) => {
     addTaskAndTasksContainer.appendChild(tasksContainer)
     
     document.getElementById(id).appendChild(addTaskAndTasksContainer);
+
     
-    document.getElementById("tasks-container").after(addTaskContainer)
+    columnHTML.appendChild(addTaskAndTasksContainer)
+
+    let columnRef = columnHTML.childNodes[1]
     
-    document.getElementById('add-task-input').placeholder = "+ Añada una tarjeta"
+    columnRef.querySelector("#tasks-container").after(addTaskContainer)
+    
+    columnRef.querySelector('#add-task-input').placeholder = "+ Añada una tarjeta"
+
+    addTaskForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let task = new Task(addTaskInput.value)
+        let actualStorage = Object.values(myStore.store).map(element => JSON.parse(element))
+        let currentColumn = actualStorage.find(element => element.id === id)
+
+        let columnInstance = new Column(currentColumn.title, currentColumn.id, currentColumn.tasks)
+        columnInstance.addTask(task)
+        console.log( columnInstance)
+        addTaskInput.value = '';
+        myStore.addListToStorage(columnInstance)
+    })
 
 };
 
