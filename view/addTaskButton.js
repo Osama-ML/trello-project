@@ -1,5 +1,5 @@
-const addTaskButton = (id) => {
-    const currentColumn = document.getElementById(id);
+const addTaskButton = (columnId) => {
+    const currentColumn = document.getElementById(columnId);
 
     let addTaskAndTasksContainer = document.createElement("div");
     addTaskAndTasksContainer.classList = "add-task-and-tasks-container";
@@ -33,17 +33,19 @@ const addTaskButton = (id) => {
         let actualStorage = Object.values(myStore.store).map((element) =>
             JSON.parse(element)
         );
-        let currentColumn = actualStorage.find((element) => element.id === id);
+        let currentColumn = actualStorage.find((element) => element.id === columnId);
 
-        // columnRef.querySelector('#tasks-container').textContent = addTaskInput.value;
 
         let columnInstance = new Column(
             currentColumn.title,
             currentColumn.id,
             currentColumn.tasks
-        );
+        )
+
         columnInstance.addTask(task);
-        console.log(columnInstance);
+        
+        createTasksView(columnId,columnInstance.tasks);
+
         addTaskInput.value = "";
         myStore.addListToStorage(columnInstance);
     });

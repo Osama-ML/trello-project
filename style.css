@@ -48,7 +48,7 @@ body {
 
 .card {
   width: 10rem;
-  height: 15rem;
+  height: min-content;
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
   padding: 1rem;
@@ -89,6 +89,15 @@ body {
 
 .card input:hover{
   background-color: gray;
+}
+
+.card ul{
+  list-style: none;
+  padding: 0;
+}
+
+.card h3{
+  margin-top: 0;
 }
 
 ::placeholder{
