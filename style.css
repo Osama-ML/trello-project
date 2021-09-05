@@ -107,6 +107,16 @@ body {
   padding: 0;
 }
 
+.card li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card li div{
+  display: flex;
+  width: 3rem;
+}
+
 .card h3{
   margin-top: 0;
 }
