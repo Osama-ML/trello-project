@@ -29,24 +29,10 @@ const addTaskButton = (columnId) => {
     addTaskForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let task = new Task(addTaskInput.value);
-        let actualStorage = Object.values(myStore.store).map((element) =>
-            JSON.parse(element)
-        );
-        let currentColumn = actualStorage.find((element) => element.id === columnId);
+        let tasks = createNewTask(addTaskInput, columnId);
 
-
-        let columnInstance = new Column(
-            currentColumn.title,
-            currentColumn.id,
-            currentColumn.tasks
-        )
-
-        columnInstance.addTask(task);
-        
-        createTasksView(columnId,columnInstance.tasks);
+        createTasksView(columnId, tasks);
 
         addTaskInput.value = "";
-        myStore.addListToStorage(columnInstance);
     });
 };
