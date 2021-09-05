@@ -57,6 +57,17 @@ body {
   margin-top: 1rem;
 }
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-delete-card-container{
+  width: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .create-new-column input{
   height: 2rem;
   padding: 0.5rem;
