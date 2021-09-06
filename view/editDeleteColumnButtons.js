@@ -1,4 +1,4 @@
-const createEditDeleteColumnButtons = () => {
+const createEditDeleteColumnButtons = (columnId) => {
     let editDeleteContainer = document.createElement("div");
     editDeleteContainer.className = "edit-delete-card-container";
 
@@ -19,6 +19,22 @@ const createEditDeleteColumnButtons = () => {
 
     editDeleteContainer.appendChild(editCard);
     editDeleteContainer.appendChild(deleteCard)
+
+    editCard.addEventListener('click', () => {
+      const currentCard =  document.getElementById(columnId);
+      const titleHTML = currentCard.childNodes[0].querySelector('h3')
+      const editInput = document.createElement('input');
+      editInput.value = titleHTML.textContent
+
+      titleHTML.parentNode.replaceChild(editInput, titleHTML);
+      editInput.focus();
+
+
+    })
+
+    deleteCard.addEventListener('click', () => {
+          console.log('delete this card')
+    })
 
     return editDeleteContainer;
 };

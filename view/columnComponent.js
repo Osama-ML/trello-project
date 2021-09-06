@@ -10,7 +10,7 @@ const createNewColumnView = (id, title) => {
     let titleHTML = document.createElement('h3')
     titleHTML.textContent = title;
 
-    const editDeleteContainer = createEditDeleteColumnButtons();
+    const editDeleteContainer = createEditDeleteColumnButtons(id);
 
     let line = document.createElement('hr');
 
