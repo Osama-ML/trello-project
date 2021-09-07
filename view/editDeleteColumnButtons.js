@@ -19,24 +19,49 @@ const createEditDeleteColumnButtons = (columnId) => {
 
     editDeleteContainer.appendChild(editCard);
     editDeleteContainer.appendChild(deleteCard)
-
+    
+    
     editCard.addEventListener('click', () => {
+      const titleBlured = document.createElement('h3');
       const currentCard =  document.getElementById(columnId);
-      const titleHTML = currentCard.childNodes[0].querySelector('h3')
+      
+      const titleContainer = currentCard.childNodes[0].querySelector('#title-container')
+      const titleHTML = titleContainer.children[0]
+      const editForm = document.createElement('form');
       const editInput = document.createElement('input');
       editInput.value = titleHTML.textContent
 
-      titleHTML.parentNode.replaceChild(editInput, titleHTML);
+      editForm.appendChild(editInput)
+
+
+      titleHTML.remove();
+      titleContainer.appendChild(editForm)
       editInput.focus();
+
+      editInput.onblur = () => {
+        titleBlured.textContent = editInput.value;
+
+        editForm.remove();
+        titleContainer.appendChild(titleBlured)
+      }
+
+      editForm.addEventListener('submit', () =>{
+        titleBlured.textContent = editInput.value;
+        titleContainer.appendChild(titleBlured)
+        editForm.remove();
+      })
 
 
     })
 
     deleteCard.addEventListener('click', () => {
-          console.log('delete this card')
+      const currentCard =  document.getElementById(columnId);
+
+      currentCard.remove()
     })
 
     return editDeleteContainer;
 };
 
 
+// edit and remove from localstorage
