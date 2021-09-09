@@ -12,17 +12,18 @@ const createNewColumnView = (id, title) => {
     titleHTML.textContent = title;
     titleContainer.appendChild(titleHTML)
 
-    const editDeleteContainer = createEditDeleteColumnButtons(id);
-
+    // const deleteContainer = createDeleteColumnButton(id);
+    
     let line = document.createElement('hr');
-
-    columnHTML.appendChild(headerCard);
+    
     headerCard.appendChild(titleContainer);
-    headerCard.appendChild(editDeleteContainer)
+    columnHTML.appendChild(headerCard);
+    // headerCard.appendChild(editDeleteContainer)
     
     columnHTML.appendChild(line);
     columnsContainer.appendChild(columnHTML);
-
+    
+    editColumnTitle(id)
+    
     addTaskButton(id);
-
 };

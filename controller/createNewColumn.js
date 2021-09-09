@@ -7,7 +7,7 @@ const createNewColumn = () => {
     myStore.addListToStorage(column);
     
     createNewColumnView(column.id, column.title);
-    
+
     input.value = "";
 
 };
