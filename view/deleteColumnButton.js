@@ -17,12 +17,14 @@ const createDeleteColumnButton = (columnId) => {
     deleteCardContainer.addEventListener('click', () => {
       const currentCard =  document.getElementById(columnId);
 
-      currentCard.remove()
+      currentCard.remove();
+      const myStore = new Storage();
+
+      myStore.store.removeItem(columnId)
+
     })
 
     return deleteCardContainer;
 };
-
-// refactor this component
 
 // edit and remove from localstorage

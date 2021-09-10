@@ -1,4 +1,6 @@
 const createNewColumnView = (id, title) => {
+    let columnsContainer = document.querySelector('#columns-container');
+
     let columnHTML = document.createElement("div");
     columnHTML.className = "card";
     columnHTML.setAttribute("id", id);
