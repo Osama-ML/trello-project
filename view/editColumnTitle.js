@@ -3,19 +3,17 @@ const editColumnTitle = (id) => {
     const titleContainer = currentCard.querySelector('#title-container')
     const titleHTML = titleContainer.querySelector('h3')
     
+    const editForm = document.createElement("form");
+    const editInput = document.createElement("input");
+    editForm.appendChild(editInput);
+    titleContainer.appendChild(editForm);
+    editForm.style.display = 'none'
+
     titleHTML.addEventListener("click", () => {
-          console.log(currentCard)
-
-      //   const titleBlured = document.createElement("h3");
-
-        const editForm = document.createElement("form");
-        const editInput = document.createElement("input");
         editInput.value = titleHTML.textContent;
 
-        editForm.appendChild(editInput);
-
         titleHTML.style.display = 'none';
-        titleContainer.appendChild(editForm);
+        editForm.style.display = 'block';
         editInput.focus();
 
         editInput.onblur = () => {

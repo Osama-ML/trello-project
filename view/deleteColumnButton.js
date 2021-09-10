@@ -1,38 +1,26 @@
 const createDeleteColumnButton = (columnId) => {
 
-    const currentColumn = document.querySelector(columnId)
+    const currentColumn = document.getElementById(columnId)
 
-    
-
-    
-    // let editCard = document.createElement("div");
-    // let editImg = document.createElement("img");
-    let deleteCard = document.createElement("div");
+    let deleteCardContainer = document.createElement("div");
     let deleteImg = document.createElement("img");
     
-    currentColumn.querySelector('#title-container').after(deleteCard)
-    // editImg.src = "../assets/editar.svg";
-    // editImg.width = "20";
-    // editImg.height = "20";
+    
     deleteImg.src = "../assets/delete.svg";
     deleteImg.width = "20";
     deleteImg.height = "20";
-
-    // editCard.appendChild(editImg);
-    deleteCard.appendChild(deleteImg);
-
-    editDeleteContainer.appendChild(deleteCard)
     
+    deleteCardContainer.appendChild(deleteImg);
     
+    currentColumn.querySelector('#title-container').after(deleteCardContainer)
     
-
-    deleteCard.addEventListener('click', () => {
+    deleteCardContainer.addEventListener('click', () => {
       const currentCard =  document.getElementById(columnId);
 
       currentCard.remove()
     })
 
-    return deleteCard;
+    return deleteCardContainer;
 };
 
 // refactor this component

@@ -12,16 +12,15 @@ const createNewColumnView = (id, title) => {
     titleHTML.textContent = title;
     titleContainer.appendChild(titleHTML)
 
-    // const deleteContainer = createDeleteColumnButton(id);
-    
     let line = document.createElement('hr');
     
     headerCard.appendChild(titleContainer);
     columnHTML.appendChild(headerCard);
-    // headerCard.appendChild(editDeleteContainer)
     
     columnHTML.appendChild(line);
     columnsContainer.appendChild(columnHTML);
+    
+    createDeleteColumnButton(id);
     
     editColumnTitle(id)
     
