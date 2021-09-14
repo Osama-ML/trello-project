@@ -15,12 +15,7 @@ const createDeleteColumnButton = (columnId) => {
     currentColumn.querySelector('#title-container').after(deleteCardContainer)
     
     deleteCardContainer.addEventListener('click', () => {
-      const currentCard =  document.getElementById(columnId);
-
-      currentCard.remove();
-      const myStore = new Storage();
-
-      myStore.store.removeItem(columnId)
+      deleteColumn(columnId)
 
     })
 
