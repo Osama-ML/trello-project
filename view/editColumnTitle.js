@@ -9,8 +9,6 @@ const editColumnTitle = (id) => {
     titleContainer.appendChild(editForm);
     editForm.style.display = "none";
 
-    const myStore = window.localStorage;
-
     titleHTML.addEventListener("click", () => {
         editInput.value = titleHTML.textContent;
 
@@ -19,34 +17,12 @@ const editColumnTitle = (id) => {
         editInput.focus();
 
         editInput.onblur = () => {
-            titleHTML.textContent = editInput.value;
-            titleHTML.style.display = "block";
-
-            editForm.style.display = "none";
-
-            const storeParsed = Object.values(myStore).map((element) =>
-                JSON.parse(element)
-            );
-
-            const columnToChange = storeParsed.find(
-                (element) => element.id === id
-            );
-
-            myStore.setItem(
-                id,
-                JSON.stringify({
-                    ...columnToChange,
-                    title: titleHTML.textContent,
-                })
-            );
+            editColumn(titleHTML, editInput, editForm, id);
         };
 
         editForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            titleHTML.textContent = editInput.value;
-            titleHTML.style.display = "block";
-
-            editForm.style.display = "none";
+            editColumn(titleHTML, editInput, editForm, id);
         });
     });
 };
