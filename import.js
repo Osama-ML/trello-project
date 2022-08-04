@@ -22,3 +22,4 @@ import "view/tasksComponent";
 import "view/addColumnButton";
 import "view/addTaskButton";
 import "view/taskEditDialog";
+import "view/taskDeleteDialog";
