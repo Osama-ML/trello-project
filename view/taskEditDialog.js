@@ -6,5 +6,9 @@ const taskEditDialog = () => {
       modalContainer.appendChild(modalContent)
       modalContainer.className = 'modal modal-show'
       closeModal(modalContainer)
+      modalContainer.addEventListener('blur', () => {
+            console.log('blurrrr')
+            modalContainer.style.display = 'none'
+      })
       return modalContainer;
 }
