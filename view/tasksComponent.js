@@ -1,4 +1,5 @@
 createTasksView = (columnId, tasks) => {
+    const syte = document.querySelector('.container')
     let column = document.getElementById(columnId);
     let tasksDiv = column.querySelector("#tasks-container");
     let tasksList = document.createElement("ul");
@@ -15,9 +16,8 @@ createTasksView = (columnId, tasks) => {
     tasksList.appendChild(taskHTML);
 
     taskHTML.addEventListener('click', () => {
-        // call dialog component
         const dialog = taskEditDialog()
-        taskHTML.appendChild(dialog)
+        syte.appendChild(dialog)
     })
 
     

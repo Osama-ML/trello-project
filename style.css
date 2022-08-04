@@ -126,7 +126,7 @@ body {
 }
 
 .add-task-and-tasks-container .modal {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   padding-top: 100px;
   left: 0;

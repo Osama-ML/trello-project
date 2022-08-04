@@ -5,13 +5,6 @@ const taskEditDialog = () => {
       modalContent.className = '.modal-content'
       modalContainer.appendChild(modalContent)
       modalContainer.className = 'modal modal-show'
-      const closeButton = document.createElement('button');
-      closeButton.innerHTML = 'Cerrar'
-      closeButton.addEventListener('click',() => {
-            console.log('hola')
-            modalContainer.style.display = 'none'
-      })
-      modalContainer.appendChild(closeButton)
-
+      closeModal(modalContainer)
       return modalContainer;
 }
