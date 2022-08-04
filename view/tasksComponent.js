@@ -16,9 +16,8 @@ createTasksView = (columnId, tasks) => {
 
     taskHTML.addEventListener('click', () => {
         // call dialog component
-        const dialog = taskEditDialog(taskHTML)
-
-        dialog.showModal()
+        const dialog = taskEditDialog()
+        taskHTML.appendChild(dialog)
     })
 
     
