@@ -4,5 +4,17 @@ const taskEditDialog = (task) => {
       const modalTaskInput = document.querySelector('.editable-content')
       modalContainer.style.display = 'block'
       modalTaskInput.innerHTML = task
+      modalContainer.addEventListener('focus', () => {
+            document.querySelector('.header').style.filter = 'blur(1px)'
+            document.querySelector('.container').style.filter = 'blur(1px)'
+            document.querySelector('.footer').style.filter = 'blur(1px)'
+      })
+      modalContainer.addEventListener('blur',() => {
+            modalContainer.style.display = 'none'
+            document.querySelector('.header').style.filter = ''
+            document.querySelector('.container').style.filter = ''
+            document.querySelector('.footer').style.filter = ''
+      })
+      modalContainer.focus()
       closeModal(modalContainer)
 }

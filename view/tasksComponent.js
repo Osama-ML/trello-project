@@ -1,5 +1,4 @@
 createTasksView = (columnId, tasks) => {
-    const syte = document.querySelector('.container')
     let column = document.getElementById(columnId);
     let tasksDiv = column.querySelector("#tasks-container");
     let tasksList = document.createElement("ul");

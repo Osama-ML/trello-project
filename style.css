@@ -80,7 +80,6 @@ body {
   background-color: gray;
 }
 
-
 .add-task-and-tasks-container{
   display: flex;
   flex-direction: column;
@@ -99,7 +98,7 @@ body {
 }
 
 .card input:hover{
-  background-color: gray;
+  background-color: rgb(128, 128, 128);
 }
 
 .card ul{
@@ -121,12 +120,15 @@ body {
   margin-top: 0;
   cursor: pointer;
 }
+
 .card img {
   cursor: pointer;
 }
+
 input {
   cursor: pointer;
 }
+
 ::placeholder{
   color: white;
 }
@@ -135,23 +137,36 @@ input {
   display: none;
   position: absolute;
   z-index: 1;
-  padding: 16px;
   left: 37%;
   top: 10%;
   width: 500px;
   height: 200px;
   overflow: auto;
-  background-color: white;
-  border-radius: 2px;
+  border: 2px solid white;
+  background: rgb(128,128,128);
+  background: linear-gradient(180deg, rgba(128,128,128,1) 35%, rgba(128,128,128,0.6979166666666667) 100%);
+  border-radius: 10px;
   box-shadow: #888;
-  opacity: 0.2;
 }
+
 .modal {
-  
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.close-btn{
+  font-size: 20px;
+  align-self: flex-end;
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: auto;
+  height: auto;
 }
 
 .modal-content {
-  color: black;
+  color: white;
   width: auto;
   height: auto;
   padding-left: 20px;
