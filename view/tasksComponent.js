@@ -15,9 +15,8 @@ createTasksView = (columnId, tasks) => {
 
     tasksList.appendChild(taskHTML);
 
-    taskHTML.addEventListener('click', () => {
-        const dialog = taskEditDialog()
-        syte.appendChild(dialog)
+    taskHTML.addEventListener('click', (e) => {
+        taskEditDialog(e.target.innerText)
     })
 
     

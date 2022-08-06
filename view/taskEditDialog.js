@@ -1,10 +1,8 @@
-const taskEditDialog = () => {
-      const modalContainer = document.createElement('div')
-      const modalContent = document.createElement('span')
-      modalContent.innerHTML = 'Texto de la modal de prueba'
-      modalContent.className = '.modal-content'
-      modalContainer.appendChild(modalContent)
-      modalContainer.className = 'modal modal-show'
+const taskEditDialog = (task) => {
+      console.log(task)
+      const modalContainer = document.querySelector('.modal-wrapper')
+      const modalTaskInput = document.querySelector('.editable-content')
+      modalContainer.style.display = 'block'
+      modalTaskInput.innerHTML = task
       closeModal(modalContainer)
-      return modalContainer;
 }

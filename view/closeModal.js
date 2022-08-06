@@ -1,6 +1,5 @@
 const closeModal = (modal) => {
-    const closeButton = document.createElement('button');
-    closeButton.innerHTML = 'Cerrar'
+    const closeButton = document.querySelector('.close-btn');
     closeButton.addEventListener('click',() => {
         modal.style.display = 'none'
     })
