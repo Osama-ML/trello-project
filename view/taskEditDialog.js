@@ -9,12 +9,6 @@ const taskEditDialog = (task) => {
             document.querySelector('.container').style.filter = 'blur(1px)'
             document.querySelector('.footer').style.filter = 'blur(1px)'
       })
-      modalContainer.addEventListener('blur',() => {
-            modalContainer.style.display = 'none'
-            document.querySelector('.header').style.filter = ''
-            document.querySelector('.container').style.filter = ''
-            document.querySelector('.footer').style.filter = ''
-      })
       modalContainer.focus()
       closeModal(modalContainer)
 }
