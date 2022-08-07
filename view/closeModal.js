@@ -1,8 +1,12 @@
 const closeModal = (modal) => {
-    const closeButton = document.createElement('button');
-    closeButton.innerHTML = 'Cerrar'
+    const closeButton = document.querySelector('.close-btn');
     closeButton.addEventListener('click',() => {
         modal.style.display = 'none'
     })
-    modal.appendChild(closeButton)
+    modal.addEventListener('blur',() => {
+        modal.style.display = 'none'
+        document.querySelector('.header').style.filter = ''
+        document.querySelector('.container').style.filter = ''
+        document.querySelector('.footer').style.filter = ''
+  })
 }

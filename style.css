@@ -80,7 +80,6 @@ body {
   background-color: gray;
 }
 
-
 .add-task-and-tasks-container{
   display: flex;
   flex-direction: column;
@@ -99,7 +98,7 @@ body {
 }
 
 .card input:hover{
-  background-color: gray;
+  background-color: rgb(128, 128, 128);
 }
 
 .card ul{
@@ -121,34 +120,54 @@ body {
   margin-top: 0;
   cursor: pointer;
 }
+
 .card img {
   cursor: pointer;
 }
+
 input {
   cursor: pointer;
 }
+
 ::placeholder{
   color: white;
 }
 
-.modal {
+.modal-wrapper {
   display: none;
   position: absolute;
   z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: 37%;
+  top: 10%;
+  width: 500px;
+  height: 200px;
   overflow: auto;
-  background-color: white;
+  border: 2px solid white;
+  background: rgb(128,128,128);
+  background: linear-gradient(180deg, rgba(128,128,128,1) 35%, rgba(128,128,128,0.6979166666666667) 100%);
+  border-radius: 10px;
+  box-shadow: #888;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.close-btn{
+  font-size: 20px;
+  align-self: flex-end;
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: auto;
+  height: auto;
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  height: 80%;
+  color: white;
+  width: auto;
+  height: auto;
+  padding-left: 20px;
 }
