@@ -1,3 +1,5 @@
+import createNewTask from "../controller/createNewTask";
+
 const addTaskButton = (columnId) => {
     const currentColumn = document.getElementById(columnId);
 

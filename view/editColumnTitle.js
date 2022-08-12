@@ -1,3 +1,5 @@
+import editColumn from "../controller/editColumn";
+
 const editColumnTitle = (id) => {
     const currentCard = document.getElementById(id);
     const titleContainer = currentCard.querySelector("#title-container");

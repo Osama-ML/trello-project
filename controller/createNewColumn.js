@@ -1,6 +1,6 @@
 let myStore = new Storage();
 
-const createNewColumn = () => {
+export default createNewColumn = () => {
     let input = document.getElementById("add-new-column");
 
     let column = new Column(input.value);
@@ -9,5 +9,4 @@ const createNewColumn = () => {
     createNewColumnView(column.id, column.title);
 
     input.value = "";
-
 };

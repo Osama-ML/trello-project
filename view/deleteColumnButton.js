@@ -1,3 +1,5 @@
+import deleteColumn from "../controller/deleteColumn";
+
 const createDeleteColumnButton = (columnId) => {
 
     const currentColumn = document.getElementById(columnId)

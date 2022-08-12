@@ -1,4 +1,4 @@
-class Column {
+export default class Column {
 
       constructor(title, id = idGenerator(), tasks = []) {
             this.tasks = tasks;

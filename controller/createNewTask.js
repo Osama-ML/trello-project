@@ -1,4 +1,4 @@
-const createNewTask = (inputValue, columnId) => {
+export default createNewTask = (inputValue, columnId) => {
     let task = new Task(inputValue.value);
     let actualStorage = Object.values(myStore.store).map((element) =>
         JSON.parse(element)

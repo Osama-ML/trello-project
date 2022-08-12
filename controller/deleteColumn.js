@@ -1,4 +1,4 @@
-const deleteColumn = (columnId) => {
+export default deleteColumn = (columnId) => {
     const currentColumn = document.getElementById(columnId);
 
     currentColumn.remove();

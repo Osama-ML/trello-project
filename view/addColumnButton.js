@@ -1,3 +1,5 @@
+import createNewColumn from "../controller/createNewColumn";
+
 let addNewColumn = document.createElement("div");
 addNewColumn.classList = "create-new-column";
 
