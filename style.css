@@ -1,11 +1,4 @@
-body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: rgb(48, 48, 48);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-}
+@import url(./generic-styles.css);
 
 #columns-container{
   display: flex;
@@ -122,10 +115,6 @@ body {
 }
 
 .card img {
-  cursor: pointer;
-}
-
-input {
   cursor: pointer;
 }
 
