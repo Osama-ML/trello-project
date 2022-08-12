@@ -1,0 +1,37 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.modal-wrapper {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 37%;
+    top: 10%;
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+    border: 2px solid white;
+    background: rgb(128,128,128);
+    border-radius: 10px;
+    box-shadow: #888;
+}
+
+.modal-content {
+    color: white;
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+}
+
+.close-btn{
+    font-size: 20px;
+    align-self: flex-end;
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: auto;
+    height: auto;
+}

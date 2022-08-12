@@ -1,9 +1,10 @@
 @import url(./generic-styles.css);
+@import url(./column-styles.css);
+@import url(./modal-styles.css);
 
 #columns-container{
   display: flex;
   overflow-x: visible;
-  
 }
 
 .header{
@@ -33,34 +34,6 @@
   display: none;
 }
 
-#manipulate{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.card {
-  width: 12rem;
-  height: min-content;
-  background-color: rgb(0, 0, 0);
-  border-radius: 5px;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.edit-delete-card-container{
-  width: 3rem;
-  display: flex;
-  justify-content: space-between;
-}
-
 .create-new-column input{
   height: 2rem;
   padding: 0.5rem;
@@ -76,87 +49,4 @@
 .add-task-and-tasks-container{
   display: flex;
   flex-direction: column;
-}
-
-.card input{
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  color: white;
-  padding: 0.5rem;
-  height: 2rem;
-  transition: background-color .8s;
-}
-
-.card input:hover{
-  background-color: rgb(128, 128, 128);
-}
-
-.card ul{
-  list-style: none;
-  padding: 0;
-}
-
-.card li {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card li div{
-  display: flex;
-  width: 3rem;
-}
-
-.card h3{
-  margin-top: 0;
-  cursor: pointer;
-}
-
-.card img {
-  cursor: pointer;
-}
-
-::placeholder{
-  color: white;
-}
-
-.modal-wrapper {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 37%;
-  top: 10%;
-  width: 500px;
-  height: 200px;
-  overflow: auto;
-  border: 2px solid white;
-  background: rgb(128,128,128);
-  background: linear-gradient(180deg, rgba(128,128,128,1) 35%, rgba(128,128,128,0.6979166666666667) 100%);
-  border-radius: 10px;
-  box-shadow: #888;
-}
-
-.modal {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-}
-
-.close-btn{
-  font-size: 20px;
-  align-self: flex-end;
-  background-color: transparent;
-  color: white;
-  border: none;
-  width: auto;
-  height: auto;
-}
-
-.modal-content {
-  color: white;
-  width: auto;
-  height: auto;
-  padding-left: 20px;
 }

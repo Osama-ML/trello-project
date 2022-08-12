@@ -18,3 +18,7 @@ button {
 input {
     cursor: pointer;
 }
+
+::placeholder{
+    color: white;
+}
