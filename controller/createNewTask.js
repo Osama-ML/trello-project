@@ -1,3 +1,6 @@
+import Column from "../model/Column";
+import Task from "../model/Task";
+
 export default createNewTask = (inputValue, columnId) => {
     let task = new Task(inputValue.value);
     let actualStorage = Object.values(myStore.store).map((element) =>

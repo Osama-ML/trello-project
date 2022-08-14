@@ -1,3 +1,5 @@
+import idGenerator from "./idGenerator";
+
 export default class Column {
 
       constructor(title, id = idGenerator(), tasks = []) {

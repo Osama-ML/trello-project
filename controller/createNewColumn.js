@@ -1,3 +1,6 @@
+import Column from "../model/Column";
+import Storage from "../model/Storage";
+
 let myStore = new Storage();
 
 export default createNewColumn = () => {

@@ -1,3 +1,5 @@
+import idGenerator from "./idGenerator";
+
 export default class Task {
 
       constructor(title) {

@@ -1,3 +1,5 @@
+import Storage from "../model/Storage";
+
 export default deleteColumn = (columnId) => {
     const currentColumn = document.getElementById(columnId);
 
