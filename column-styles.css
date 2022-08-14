@@ -1,0 +1,54 @@
+.card {
+    width: 12rem;
+    height: min-content;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card input{
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem;
+    height: 2rem;
+    transition: background-color .8s;
+}
+
+.card input:hover{
+    background-color: rgb(128, 128, 128);
+  }
+  
+.card ul{
+    list-style: none;
+    padding: 0;
+}
+  
+.card li {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.card li div{
+    display: flex;
+    width: 3rem;
+}
+  
+.card h3{
+    margin-top: 0;
+    cursor: pointer;
+}
+  
+.card img {
+    cursor: pointer;
+}

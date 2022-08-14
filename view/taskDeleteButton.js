@@ -1,3 +1,3 @@
-const taskDeleteButton = () => {
-
+export const taskDeleteButton = () => {
+    console.log('delete task')
 }

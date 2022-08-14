@@ -1,4 +1,6 @@
-const createDeleteColumnButton = (columnId) => {
+import {deleteColumn} from "../controller/deleteColumn.js";
+
+export const createDeleteColumnButton = (columnId) => {
 
     const currentColumn = document.getElementById(columnId)
 

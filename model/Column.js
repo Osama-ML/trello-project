@@ -1,4 +1,6 @@
-class Column {
+import {idGenerator} from "./idGenerator.js";
+
+export class Column {
 
       constructor(title, id = idGenerator(), tasks = []) {
             this.tasks = tasks;

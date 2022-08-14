@@ -1,4 +1,4 @@
-const editColumn = (titleHTML, editInput, editForm, id) => {
+export const editColumn = (titleHTML, editInput, editForm, id) => {
     const myStore = window.localStorage;
 
     titleHTML.textContent = editInput.value;
