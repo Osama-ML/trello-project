@@ -1,4 +1,4 @@
-import idGenerator from "./idGenerator";
+import idGenerator from "./idGenerator.js";
 
 export default class Column {
 

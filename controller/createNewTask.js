@@ -1,5 +1,5 @@
-import Column from "../model/Column";
-import Task from "../model/Task";
+import Column from "../model/Column.js";
+import Task from "../model/Task.js";
 
 export default createNewTask = (inputValue, columnId) => {
     let task = new Task(inputValue.value);

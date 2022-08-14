@@ -1,4 +1,4 @@
-import deleteColumn from "../controller/deleteColumn";
+import deleteColumn from "../controller/deleteColumn.js";
 
 export default createDeleteColumnButton = (columnId) => {
 

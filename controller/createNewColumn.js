@@ -1,6 +1,6 @@
-import Column from "../model/Column";
-import Storage from "../model/Storage";
-import createNewColumnView from "../view/columnComponent"
+import Column from "../model/Column.js";
+import Storage from "../model/Storage.js";
+import createNewColumnView from "../view/columnComponent.js"
 
 let myStore = new Storage();
 

@@ -1,4 +1,4 @@
-import closeModal from "./closeModal"
+import closeModal from "./closeModal.js"
 
 export default taskEditDialog = (task) => {
       console.log(task)

@@ -1,4 +1,4 @@
-import editColumn from "../controller/editColumn";
+import editColumn from "../controller/editColumn.js";
 
 export default editColumnTitle = (id) => {
     const currentCard = document.getElementById(id);
