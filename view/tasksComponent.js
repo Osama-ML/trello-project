@@ -1,6 +1,6 @@
-import taskEditDialog from "./taskEditDialog.js";
+import {taskEditDialog} from "./taskEditDialog.js";
 
-export default createTasksView = (columnId, tasks) => {
+export const createTasksView = (columnId, tasks) => {
     let column = document.getElementById(columnId);
     let tasksDiv = column.querySelector("#tasks-container");
     let tasksList = document.createElement("ul");

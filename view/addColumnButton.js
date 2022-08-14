@@ -1,4 +1,4 @@
-import createNewColumn from "../controller/createNewColumn.js";
+import {createNewColumn} from "../controller/createNewColumn.js";
 
 let addNewColumn = document.createElement("div");
 addNewColumn.classList = "create-new-column";

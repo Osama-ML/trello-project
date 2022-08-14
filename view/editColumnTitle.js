@@ -1,6 +1,6 @@
-import editColumn from "../controller/editColumn.js";
+import {editColumn} from "../controller/editColumn.js";
 
-export default editColumnTitle = (id) => {
+export const editColumnTitle = (id) => {
     const currentCard = document.getElementById(id);
     const titleContainer = currentCard.querySelector("#title-container");
     const titleHTML = titleContainer.querySelector("h3");

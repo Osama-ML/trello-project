@@ -1,7 +1,7 @@
-import Column from "../model/Column.js";
-import Task from "../model/Task.js";
+import {Column} from "../model/Column.js";
+import {Task} from "../model/Task.js";
 
-export default createNewTask = (inputValue, columnId) => {
+export const createNewTask = (inputValue, columnId) => {
     let task = new Task(inputValue.value);
     let actualStorage = Object.values(myStore.store).map((element) =>
         JSON.parse(element)

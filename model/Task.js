@@ -1,6 +1,6 @@
-import idGenerator from "./idGenerator.js";
+import {idGenerator} from "./idGenerator.js";
 
-export default class Task {
+export class Task {
 
       constructor(title) {
             this.id = idGenerator();
@@ -18,7 +18,7 @@ export default class Task {
       }
 
       addCommentTask(comment = ""){
-            this.comments = [ {id: idGenerator(), comment}, ...this.comments]
+            this.comments = [ {id: this.id, comment}, ...this.comments]
       }
 
       editCommentTask(commentId, newComment) {

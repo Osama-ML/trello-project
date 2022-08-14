@@ -1,6 +1,6 @@
-import closeModal from "./closeModal.js"
+import {closeModal} from "./closeModal.js"
 
-export default taskEditDialog = (task) => {
+export const taskEditDialog = (task) => {
       console.log(task)
       const modalContainer = document.querySelector('.modal-wrapper')
       const modalTaskInput = document.querySelector('.editable-content')

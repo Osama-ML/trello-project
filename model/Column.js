@@ -1,6 +1,6 @@
-import idGenerator from "./idGenerator.js";
+import {idGenerator} from "./idGenerator.js";
 
-export default class Column {
+export class Column {
 
       constructor(title, id = idGenerator(), tasks = []) {
             this.tasks = tasks;
