@@ -1,6 +1,6 @@
 import createNewTask from "../controller/createNewTask";
-
-const addTaskButton = (columnId) => {
+import createTasksView from "./tasksComponent"
+export default addTaskButton = (columnId) => {
     const currentColumn = document.getElementById(columnId);
 
     let addTaskAndTasksContainer = document.createElement("div");

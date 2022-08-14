@@ -1,4 +1,8 @@
-const createNewColumnView = (id, title) => {
+import addTaskButton from "./addTaskButton";
+import createDeleteColumnButton from "./deleteColumnButton";
+import editColumnTitle from "./editColumnTitle";
+
+export default createNewColumnView = (id, title) => {
     let columnsContainer = document.querySelector('#columns-container');
 
     let columnHTML = document.createElement("div");

@@ -1,4 +1,6 @@
-createTasksView = (columnId, tasks) => {
+import taskEditDialog from "./taskEditDialog";
+
+export default createTasksView = (columnId, tasks) => {
     let column = document.getElementById(columnId);
     let tasksDiv = column.querySelector("#tasks-container");
     let tasksList = document.createElement("ul");

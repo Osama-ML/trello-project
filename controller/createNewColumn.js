@@ -1,5 +1,6 @@
 import Column from "../model/Column";
 import Storage from "../model/Storage";
+import createNewColumnView from "../view/columnComponent"
 
 let myStore = new Storage();
 
