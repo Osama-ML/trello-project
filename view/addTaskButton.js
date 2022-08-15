@@ -27,7 +27,7 @@ export const addTaskButton = (columnId) => {
     currentColumn.querySelector("#tasks-container").after(addTaskContainer);
 
     currentColumn.querySelector("#add-task-input").placeholder =
-        "+ Añada una tarjeta";
+        "+ Añada una tarea";
 
     addTaskForm.addEventListener("submit", (e) => {
         e.preventDefault();

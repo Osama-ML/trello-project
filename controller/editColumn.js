@@ -1,5 +1,5 @@
 export const editColumn = (titleHTML, editInput, editForm, id) => {
-    const myStore = window.localStorage;
+    let myStore = window.localStorage;
 
     titleHTML.textContent = editInput.value;
     titleHTML.style.display = "block";
